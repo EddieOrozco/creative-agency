@@ -1,6 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
+  images: {
+    unoptimized: true,  // ← This allows localhost images
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: 'creative-agency.local',
+        pathname: '/wp-content/uploads/**',
+      },
+    ],
+  },
 };
 
 export default nextConfig;
